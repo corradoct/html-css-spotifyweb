@@ -1,0 +1,65 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;               /*DA CANCELLARE SE SI USA BOOTSTRAP*/
+  box-sizing: border-box;
+}
+/* FINE RESET */
+
+/* REGOLE GENERALI */
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+/* FINE REGOLE GENERALI */
+
+/* REGOLE MAIN */
+main > .wrapper {
+  height: calc( 100vh - 100px );
+  background-color: red;
+}
+
+/* Regole menu */
+.menu {
+  width: 200px;
+  height: 100%;
+  background-color: black;
+  float: left;
+}
+/* Fine regole menu */
+
+/* Regole content */
+.content {
+  float: left;
+  width: calc( 100% - 200px );
+  height: 100%;
+  overflow-y: auto;
+}
+/* Fine regole content */
+
+/* Regole upgrade */
+.upgrade {
+  width: 100%;
+  height: 100px;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 200px;
+}
+/* Fine regole upgrade */
+
+/* Regole pages */
+.pages {
+  padding-top: 100px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+/* Fine regole pages */
+
+/* FINE REGOLE MAIN */
+
+/* REGOLE FOOTER */
+footer > .wrapper {
+  height: 100px;
+  background-color: gray;
+}
+/* FINE REGOLE FOOTER */
