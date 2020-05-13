@@ -7,60 +7,365 @@
     <link rel="icon" href="img/favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
 
     <!-- INIZIO MAIN -->
     <main>
-      <div class="wrapper">
 
-        <!-- Inizio menu -->
-        <div class="menu">
-          <div class="logo">
-            <a href="#">
-              <img src="img/logo.svg" alt="">
-            </a>
+      <!-- Inizio wrapper -->
+      <div class="ms_wrapper">
+
+        <!-- Inizio sidebar -->
+        <div class="ms_sidebar">
+
+          <!-- Inizio container flex -->
+          <div class="ms_sidebar_container">
+            <!-- Inizio logo -->
+            <div class="ms_logo">
+              <a href="#">
+                <img src="img/logo.svg" alt="Logo">
+              </a>
+            </div>
+            <!-- Fine logo -->
+
+            <!-- Inizio menu -->
+            <div class="ms_menu_wrapper">
+              <ul class="ms_menu">
+                <li>
+                  <a href="#">
+                    <div class="image home">
+                      <img src="img/home.svg" alt="Home image">
+                    </div>
+                    home
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="image search">
+                      <img src="img/search.svg" alt="Search image">
+                    </div>
+                    cerca
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="image librery">
+                      <img src="img/libreria.svg" alt="Librery image">
+                    </div>
+                    libreria
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!-- Fine menu -->
+
+            <!-- Inizio playlist -->
+            <div class="ms_playlist_wrapper">
+              <h3>playlist</h3>
+              <a href="#"><i class="fas fa-plus-square"></i>crea playlist</a>
+              <ul class="ms_playlist">
+                <li><a href="#">nome playlist</a></li>
+                <li><a href="#">nome playlist</a></li>
+                <li><a href="#">nome playlist</a></li>
+                <li><a href="#">nome playlist</a></li>
+                <li><a href="#">nome playlist</a></li>
+                <li><a href="#">nome playlist</a></li>
+                <li><a href="#">nome playlist</a></li>
+              </ul>
+            </div>
+            <!-- Fine playlist -->
+
+            <!-- Inizio account -->
+            <div class="ms_account_wrapper">
+              <div class="ms_app">
+                <a href="#"><i class="far fa-arrow-alt-circle-down"></i>installa app</a>
+              </div>
+
+              <div class="ms_account">
+                <a href="#"><i class="fas fa-user-circle"></i>john doe</a>
+              </div>
+            </div>
+            <!-- Fine account -->
           </div>
+          <!-- Fine container flex -->
         </div>
-        <!-- Fine menu -->
+        <!-- Fine sidebar -->
 
         <!-- Inizio contenuto -->
-        <div class="content">
+        <div class="ms_content">
 
           <!-- Inizio sezione upgrade -->
-          <div class="upgrade">
-            <a href="#">
-              <div class="text-upgrade">
-                effettua l&apos;upgrade
-              </div>
-            </a>
+          <div class="ms_upgrade">
+            <a href="#">effettua l&apos;upgrade</a>
           </div>
           <!-- Fine sezione upgrade -->
 
           <!-- Inizio sezione pages -->
-          <div class="pages">
-            in evidenza
+          <div class="ms_pages">
+            <ul class="ms_list_pages">
+              <li><a href="#">in&nbsp;evidenza</a></li>
+              <li><a href="#">podcast</a></li>
+              <li><a href="#">classifiche</a></li>
+              <li><a href="#">generi&nbsp;e&nbsp;mood</a></li>
+              <li><a href="#">nuove&nbsp;uscite</a></li>
+              <li><a href="#">scopri</a></li>
+            </ul>
           </div>
           <!-- Fine sezione pages -->
 
           <!-- Inizio sezione albums -->
-          <div class="albums">
+          <div class="ms_albums_wrapper">
 
+            <!-- Inizio sezione recently played -->
+            <div class="ms_collection_recently">
+
+              <!-- Inizio titolo -->
+              <div class="ms_title">
+                <h2>recently played</h2>
+              </div>
+              <!-- Fine titolo -->
+
+              <!-- Inizio collezione -->
+              <div class="ms_collection">
+
+                <!-- Inizio singolo album -->
+                <div class="ms_collection_item">
+                  <a href="#">
+                    <div class="ms_item_image">
+                      <img src="img/metal_lifting.jpg" alt="Metal lifting image">
+                    </div>
+
+                    <div class="ms_item_text">
+                      <h3>heavy metal</h3>
+                      <span>subtitle</span>
+                    </div>
+                  </a>
+                </div>
+                <!-- Fine singolo album -->
+
+                <!-- Inizio singolo album -->
+                <div class="ms_collection_item">
+                  <a href="#">
+                    <div class="ms_item_image">
+                      <img src="img/stranger.jpeg" alt="Stranger image">
+                    </div>
+
+                    <div class="ms_item_text">
+                      <h3>stranger things, vol.1 (a netflix original series soundtrack)</h3>
+                      <span>kyle dixon &amp; michael stein</span>
+                    </div>
+                  </a>
+                </div>
+                <!-- Fine singolo album -->
+
+                <!-- Inizio singolo album -->
+                <div class="ms_collection_item">
+                  <a href="#">
+                    <div class="ms_item_image">
+                      <img src="img/aquietplace.jpeg" alt="Quiet place image">
+                    </div>
+
+                    <div class="ms_item_text">
+                      <h3>a quiet place</h3>
+                      <span>subtitle</span>
+                    </div>
+                  </a>
+                </div>
+                <!-- Fine singolo album -->
+
+                <!-- Inizio singolo album -->
+                <div class="ms_collection_item">
+                  <a href="#">
+                    <div class="ms_item_image">
+                      <img src="img/split.jpeg" alt="Split image">
+                    </div>
+
+                    <div class="ms_item_text">
+                      <h3>split</h3>
+                      <span>subtitle</span>
+                    </div>
+                  </a>
+                </div>
+                <!-- Fine singolo album -->
+
+                <!-- Inizio singolo album -->
+                <div class="ms_collection_item">
+                  <a href="#">
+                    <div class="ms_item_image">
+                      <img src="img/cure.jpeg" alt="Cure image">
+                    </div>
+
+                    <div class="ms_item_text">
+                      <h3>a cure for wellness</h3>
+                      <span>subtitle</span>
+                    </div>
+                  </a>
+                </div>
+                <!-- Fine singolo album -->
+
+                <!-- Inizio singolo album -->
+                <div class="ms_collection_item">
+                  <a href="#">
+                    <div class="ms_item_image">
+                      <img src="img/sinister.jpeg" alt="Sinister image">
+                    </div>
+
+                    <div class="ms_item_text">
+                      <h3>sinister</h3>
+                      <span>subtitle</span>
+                    </div>
+                  </a>
+                </div>
+                <!-- Fine singolo album -->
+              </div>
+              <!-- Fine collezione -->
+            </div>
+            <!-- Fine sezione recently played -->
+
+            <!-- Inizio sezione creato per John Doe -->
+            <div class="ms_collection_user">
+
+              <!-- Inizio titolo -->
+              <div class="ms_title">
+                <h2>creato per john doe</h2>
+                <p>pi&ugrave; ascolti, pi&ugrave; accurati saranno i suggerimenti.</p>
+              </div>
+              <!-- Fine titolo -->
+
+              <!-- Inizio collezione -->
+              <div class="ms_collection">
+
+                <!-- Inizio singolo album -->
+                <div class="ms_collection_item">
+                  <a href="#">
+                    <div class="ms_item_image">
+                      <img src="img/radar.jpeg" alt="Release radar image">
+                    </div>
+
+                    <div class="ms_item_text">
+                      <h3>release radar</h3>
+                    </div>
+                  </a>
+                </div>
+                <!-- Fine singolo album -->
+
+                <!-- Inizio singolo album -->
+                <div class="ms_collection_item">
+                  <a href="#">
+                    <div class="ms_item_image">
+                      <img src="img/mixdaily.jpeg" alt="Daily mix image">
+                    </div>
+
+                    <div class="ms_item_text">
+                      <h3>daily mix 1</h3>
+                    </div>
+                  </a>
+                </div>
+                <!-- Fine singolo album -->
+              </div>
+              <!-- Fine collezione -->
+            </div>
+            <!-- Fine sezione creato per John Doe -->
+
+            <!-- Inizio sezione artisti piu popolari -->
+            <div class="ms_collection_artist">
+
+              <!-- Inizio titolo -->
+              <div class="ms_title">
+                <h2>artisti piu popolari</h2>
+                <p>pi&ugrave; ascolti, pi&ugrave; accurati saranno i suggerimenti.</p>
+              </div>
+              <!-- Fine titolo -->
+
+              <!-- Inizio collezione -->
+              <div class="ms_collection">
+
+                <!-- Inizio singolo album -->
+                <div class="ms_collection_item">
+                  <a href="#">
+                    <div class="ms_item_image">
+                      <img src="img/youg.jpeg" alt="Lana del rey image">
+                    </div>
+
+                    <div class="ms_item_text">
+                      <h3>lana del rey</h3>
+                    </div>
+                  </a>
+                </div>
+                <!-- Fine singolo album -->
+
+                <!-- Inizio singolo album -->
+                <div class="ms_collection_item">
+                  <a href="#">
+                    <div class="ms_item_image">
+                      <img src="img/einaudi.jpeg" alt="Einaudi image">
+                    </div>
+
+                    <div class="ms_item_text">
+                      <h3>ludovico einaudi</h3>
+                    </div>
+                  </a>
+                </div>
+                <!-- Fine singolo album -->
+              </div>
+              <!-- Fine collezione -->
+            </div>
+            <!-- Fine sezione artisti piu popolari -->
           </div>
-          <!-- Fine sezione albums -->
         </div>
         <!-- Fine contenuto -->
-
       </div>
+      <!-- Fine wrapper -->
     </main>
     <!-- FINE MAIN -->
 
     <!-- INIZIO FOOTER -->
     <footer>
-      <div class="wrapper">
+      <div class="ms_wrapper">
+        <div class="ms_album_now">
 
+          <div class="ms_album_now_image">
+            <img src="img/sinister.jpeg" alt="Album image">
+          </div>
+
+          <div class="ms_album_now_text">
+            <h5>sinister</h5>
+            <p>brano nome</p>
+          </div>
+
+          <div class="ms_album_now_icons">
+            <i class="far fa-heart"></i>
+            <i class="far fa-folder"></i>
+          </div>
+        </div>
+
+        <div class="ms_player">
+
+          <div class="ms_player_icons">
+            <i class="fas fa-random"></i>
+            <i class="fas fa-step-backward"></i>
+            <i class="far fa-play-circle"></i>
+            <i class="fas fa-step-forward"></i>
+            <i class="fas fa-redo-alt"></i>
+          </div>
+
+          <div class="ms_timeline_player">
+            <span>0:25</span>
+            <hr>
+            <span>4:35</span>
+          </div>
+        </div>
+
+        <div class="ms_player_option">
+          <div class="ms_player_option_icons">
+            <i class="fas fa-list"></i>
+            <i class="fas fa-desktop"></i>
+            <i class="fas fa-volume-up"></i>
+            <hr>
+          </div>
+        </div>
       </div>
     </footer>
     <!-- FINE FOOTER -->
