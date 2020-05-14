@@ -42,6 +42,38 @@ footer i:hover {
   height: 100vh;
   min-width: 500px;
 }
+
+/* Regole filtro immagini album */
+
+.ms_collection_image .filter {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+}
+
+.ms_collection_image {
+  position: relative;
+}
+
+.ms_collection_image .filter i {
+  color: #fff;
+  font-size: 4em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ms_collection a:hover .filter{
+  background-color: rgba(0, 0, 0, 0.5);
+  display: block;
+}
+/* Fine regole filtro immagini album */
+
 /* FINE REGOLE GENERALI */
 
 /* REGOLE MAIN */
@@ -205,8 +237,12 @@ main {
     display: block;
   }
 
-  .ms_navigation li.ms_active {
+  .ms_menu li.ms_active {
     border: none;
+  }
+
+  .ms_sidebar img:hover {
+    transform: scale(1.2);
   }
 
   .ms_text_desktop {
@@ -272,6 +308,7 @@ main {
   border-radius: 25px;
   text-align: center;
   padding: 10px 20px;
+  width: 180px;
 }
 
 .ms_upgrade a:hover {
@@ -311,13 +348,12 @@ main {
 /* Fine regole pages */
 
 /* Regole recently collection */
-
 .ms_title {
-  padding-bottom: 20px;
+  padding: 0 0 20px 10px;
 }
 
 .ms_title h2 {
-  padding-bottom: 5px;
+  padding: 10px 0;
 }
 
 .ms_collection ul {
@@ -331,58 +367,54 @@ main {
   padding: 0 10px;
 }
 
+.ms_collection h4 {
+  font-size: .9em;
+  color: #fff;
+  padding: 5px 0;
+}
+
+.ms_collection p {
+  font-size: .7em;
+}
+
 .ms_collection_image img {
   width: 100%;
-}
-
-.ms_collection_image .filter {
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0);
-  position: absolute;
-  left: 0;
-  top: 0;
-  display: none;
-}
-
-.ms_collection_image {
-  position: relative;
-}
-
-.ms_collection_image .filter i {
-  color: #fff;
-  font-size: 4em;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.ms_collection_image:hover .filter{
-  background-color: rgba(0, 0, 0, 0.5);
-  display: block;
 }
 /* Fine regole recently collection */
 
 /* Regole creato per John Doe */
-
+.ms_title p {
+  color: gray;
+  font-size: .8em;
+  font-weight: bold;
+}
 /* Fine regole creato per John Doe */
 
 /* Regole artisti popolari */
+.ms_popolar_collection {
+  padding-bottom: 30px;
+}
 
 .ms_popolar_collection .ms_collection_image img {
+  border-radius: 50%;
+}
+
+.ms_popolar_collection .ms_collection_image .filter {
   border-radius: 50%;
 }
 /* Fine regole artisti popolari */
 
 /********* MEDIAQUERYS CONTENT ***********/
-@media screen and (min-width: 1439px) {
-
+@media screen and (max-width: 1439px) {
+  .ms_collection_image .filter i {
+    font-size: 3em;
+  }
 }
 
 @media screen and (max-width: 878px) {
   .ms_collection ul li {
     flex-basis: calc(100% / 4);
+    padding-bottom: 10px;
   }
 }
 
@@ -392,11 +424,11 @@ main {
   }
 
   .ms_collection ul li {
-    flex-basis: 50%
+    flex-basis: 50%;
   }
 
   .ms_collection_image img {
-    width: 155px;
+    width: 100%;
   }
 }
 
@@ -408,19 +440,227 @@ main {
   .ms_upgrade {
     width: calc(100% - 60px);   /* sidebar = 60px */
   }
-
-  .ms_collection_image img {
-    width: 200px;
-  }
 }
 /********* FINE MEDIAQUERYS CONTENT ***********/
 
 /* FINE REGOLE MAIN */
 
 /* REGOLE FOOTER */
-footer {
+footer .ms_player_wrapper {
   width: 100%;
   height: 100px;
   background-color: #282828;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
+.ms_album_now_text,
+.ms_album_now_icons,
+.ms_player_wrapper img {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+footer i {
+  cursor: pointer;
+  padding: 0 10px;
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+footer hr {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 2px;
+  border-radius: 25px;
+  background-color: gray;
+  border-color: gray;
+  cursor: pointer;
+}
+
+.ms_timeline_player hr:hover,
+.ms_player_option_icons hr:hover {
+  padding: 0;
+}
+
+.ms_timeline_player hr:hover::before,
+.ms_player_option_icons hr:hover::before {
+  content: "";
+  display: block;
+  width: 40%;
+  border-bottom: 3px solid green;
+}
+
+i.fa-circle {
+    display: none;
+    font-size: 10px;
+}
+
+.ms_timeline_player hr:hover + i.fa-circle,
+.ms_player_option_icons hr:hover + i.fa-circle {
+  display: block;
+}
+
+/* Regole sezione album now */
+.ms_album_now {
+  flex-basis: 30%;
+  min-width: 150px;
+}
+
+.ms_album_now img {
+  width: 80px;
+  padding: 0 10px;
+}
+
+.ms_album_now_text {
+  padding-right: 10px;
+}
+
+.ms_album_now_subtitle a {
+  font-size: .6em;
+  color: gray;
+}
+
+.ms_album_now_subtitle a:hover {
+  color: #fff;
+}
+
+.ms_album_now_icons {
+  color: gray;
+}
+/* Fine regole sezione album now */
+
+/* Regole sezione player */
+.ms_player {
+  text-align: center;
+  flex-basis: 40%;
+}
+
+.ms_player_icons {
+  padding-bottom: 10px;
+}
+
+.ms_player_icons i.fa-play-circle {
+  font-size: 25px;
+}
+
+.ms_player_icons i.fa-play-circle:hover {
+  transform: scale(1.2);
+}
+
+.ms_player span {
+  padding: 0 15px;
+  font-size: .7em;
+  color: #fff;
+  font-weight: bold;
+}
+
+.ms_timeline_player {
+  position: relative;
+}
+
+.ms_timeline_player hr {
+  width: 60%;
+}
+
+.ms_timeline_player i.fa-circle {
+  position: absolute;
+  top: 5px;
+  left: 230px;
+}
+/* Fine regole sezione player */
+
+/* Regole sezione player options */
+.ms_player_option_icons {
+  flex-basis: 30%;
+  text-align: right;
+  min-width: 150px;
+  padding-right: 10px;
+  position: relative;
+}
+
+.ms_player_option_icons hr {
+  width: 100px;
+}
+
+.ms_player_option_icons i.fa-circle {
+  position: absolute;
+  top: 5px;
+  right: 60px;
+}
+/* Fine regole sezione player options */
+
+/********* MEDIAQUERYS FOOTER ***********/
+@media screen and (max-width: 1439px) {
+
+}
+
+@media screen and (max-width: 878px) {
+  .ms_album_now img {
+    width: 30%;
+  }
+
+  .ms_album_now_text {
+    width: 40%;
+    font-size: .8em;
+  }
+
+  .ms_album_now_icons i {
+    padding-left: 3px;
+  }
+
+  .ms_album_now_icons .far.fa-heart {
+    display: block;
+    padding-bottom: 5px;
+  }
+
+  .ms_player span {
+    padding: 0 10px;
+  }
+
+  .ms_player_option_icons i {
+    font-size: 10px;
+    padding: 0 5px;
+  }
+
+  .ms_timeline_player i.fa-circle {
+    left: 135px;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .ms_album_now img {
+    padding-right: 3px;
+  }
+
+  .ms_player span {
+    padding: 0 5px;
+  }
+
+  .ms_player_option_icons i {
+    padding: 0 2px;
+  }
+
+  .ms_player_option_icons hr {
+    width: 70px;
+  }
+
+  .ms_timeline_player i.fa-circle {
+    left: 95px;
+  }
+
+  .ms_player_option_icons i.fa-circle {
+    right: 50px;
+  }
+}
+
+@media screen and (max-width: 552px) {
+  .ms_timeline_player i.fa-circle {
+    left: 80px;
+  }
+}
+/********* FINE MEDIAQUERYS FOOTER ***********/
+
 /* FINE REGOLE FOOTER */
