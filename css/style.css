@@ -168,6 +168,8 @@ main {
 .ms_playlist {
   overflow-y: auto;
   height: calc(100vh - 500px);
+  scrollbar-color: green black;
+  scrollbar-width: thin;
 }
 
 .ms_playlist li {
@@ -280,6 +282,8 @@ main {
   background-color: #141922;
   float: left;
   overflow-y: auto;
+  scrollbar-color: green black;
+  scrollbar-width: thin;
 }
 /* Fine regole content */
 
