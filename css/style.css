@@ -9,7 +9,7 @@
 /* REGOLE GENERALI */
 body {
   font-family: 'Montserrat', sans-serif;
-  min-width: 500px;
+
 }
 
 h2,
@@ -31,17 +31,23 @@ ul {
   list-style: none;
 }
 
-i {
-  padding-right: 5px;
-  font-size: 20px;
-  vertical-align: middle;
+.ms_sidebar a:hover,
+.ms_list_pages a:hover,
+footer i:hover {
+  color: #fff;
+}
+
+.ms_main_wrapper {
+  width: 100%;
+  height: 100vh;
+  min-width: 500px;
 }
 /* FINE REGOLE GENERALI */
 
 /* REGOLE MAIN */
-main > .ms_wrapper {
- height: calc( 100vh - 100px );  /* footer = 100px */
- width: 100%;
+main {
+  width: 100%;
+  height: calc(100vh - 100px);  /* footer = 100px */
 }
 
 /* Regole sidebar */
@@ -50,66 +56,71 @@ main > .ms_wrapper {
   height: 100%;
   background-color: #000;
   float: left;
-  padding: 30px 20px 5px 20px;
-  font-size: 12px;
+  overflow: hidden;
+  font-weight: bold;
+  font-size: .8em;
 }
+/* Fine regole sidebar */
 
-.ms_sidebar li {
-  padding-top: 10px;
-}
-
-.ms_sidebar .ms_sidebar_container {
+/* Regole conteiner flex */
+.ms_container_flex {
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
 }
-/* Fine regole sidebar */
+/* Fine regole conteiner flex */
 
-/* Regole logo */
+/* Regole sidebar top */
+.ms_sidebar_top {
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+/* Fine regole sidebar top */
+
+/* Regole logo desktop e responsive */
 .ms_logo {
   max-width: 80%;
+  padding: 10px;
 }
 
-.ms_logo img {
+.ms_logo.desktop img {
   width: 100%;
 }
-/* Fine regole logo */
 
-/* Regole menu */
-.ms_menu_wrapper {
-  /* height: 140px; */
-}
-
-.ms_menu {
-  padding-top: 35px;
-}
-
-.ms_menu .image  {
-  width: 25px;
-  display: inline-block;
-}
-
-.ms_menu .image img {
+.ms_logo.responsive img {
+  display: none;
   width: 100%;
+}
+/* Fine regole logo desktop e responsive */
+
+/* Regole navigazione */
+.ms_navigation li {
+  padding: 10px;
+}
+
+.ms_navigation li.ms_active {
+  border-left: 3px solid green;
+}
+
+.ms_navigation li.ms_active a {
+  color: #fff;
+}
+
+.ms_navigation img {
+  height: 25px;
+  width: auto;
   vertical-align: middle;
 }
-/* Fine regole menu */
+/* Fine regole navigazione */
 
-/* Regole playlist */
-.ms_sidebar_container .ms_playlist_wrapper  {
-/* height: 300px; */
-flex-grow: 1;
-min-height: 100px;
+/* Inizio regole playlist */
+.ms_playlist_desktop {
+  /* display: none; */
+  padding: 0 10px;
 }
 
-.ms_playlist {
-  overflow-y: auto;
-  /* height: calc( 100% - 240px);  /* footer = 100px, account = 50px, padding = 90px */ */
-
-}
-
-.ms_playlist_wrapper h3 {
+.ms_playlist_desktop h3 {
   text-transform: uppercase;
   font-size: 13px;
   font-weight: bold;
@@ -117,56 +128,138 @@ min-height: 100px;
 }
 
 .fa-plus-square {
-  font-size: 45px;
+  font-size: 35px;
+  padding-right: 10px;
+  vertical-align: middle;
+}
+
+.ms_playlist {
+  overflow-y: auto;
+  height: calc(100vh - 500px);
+}
+
+.ms_playlist li {
+  padding: 10px 0;
 }
 /* Fine regole playlist */
 
-/* Regole account */
-.ms_account_wrapper {
-  /* min-height: 30px; */
+/* Inizio regole sidebar bottom */
+.ms_sidebar_bottom {
+  flex-shrink: 0;
+  padding: 0 10px;
 }
+/* Fine regole sidebar bottom */
 
+/* Inizio regole scarica app e account */
 .ms_app {
   border-bottom: 1px solid #a3a3a3;
   padding-bottom: 10px;
-  font-size: 10px;
-}
-
-.fa-arrow-alt-circle-down {
-  font-size: 15px;
+  font-size: .9em;
+  font-weight: normal;
 }
 
 .ms_account {
-  padding-top: 10px;
-  font-size: 15px;
-  font-weight: bold;
+  padding: 10px 0;
 }
 
-.fa-user-circle {
-  font-size: 25px;
+.ms_account a {
+  color: #fff;
 }
-/* Fine regole account */
+
+.ms_account img {
+  height: 25px;
+  width: 25px;
+  vertical-align: middle;
+  background-color: gray;
+  border-radius: 50%;
+}
+
+.ms_app img {
+  height: 15px;
+  width: auto;
+  vertical-align: middle;
+}
+
+.ms_app span,
+.ms_account span {
+  padding-left: 10px;
+}
+/* Fine regole scarica app e account */
+
+/********* MEDIAQUERYS SIDEBAR ***********/
+@media screen and (max-width: 552px) {
+  .ms_sidebar {
+    width: 60px;
+    padding-left: 8px;
+  }
+
+  .ms_logo {
+    padding-top: 0;
+  }
+
+  .ms_logo.desktop img {
+    display: none;
+  }
+
+  .ms_logo.responsive img {
+    display: block;
+  }
+
+  .ms_navigation li.ms_active {
+    border: none;
+  }
+
+  .ms_text_desktop {
+    display: none;
+  }
+
+  .ms_playlist_desktop {
+    display: none;
+  }
+
+  .ms_app span,
+  .ms_account span {
+    display: none;
+  }
+
+  .ms_app {
+    border: none;
+  }
+
+  .ms_app img {
+    height: 18px;
+  }
+
+  .ms_account img {
+    height: 20px;
+    width: 20px;
+  }
+}
+/********* FINE MEDIAQUERYS SIDEBAR ***********/
 
 /* Regole content */
 .ms_content {
-  float: left;
-  width: calc( 100% - 200px );  /* sidebar = 200px */
+  width: calc(100% - 200px);   /* sidebar = 200px */
   height: 100%;
-  overflow-y: auto;
   background-color: #141922;
+  float: left;
+  overflow-y: auto;
 }
 /* Fine regole content */
 
 /* Regole upgrade */
 .ms_upgrade {
-  text-align: right;
-  padding: 29px 5px;
-  width: calc(100% - 200px);
+  width: calc(100% - 200px);   /* sidebar = 200px */
   height: 100px;
   background-color: rgba(0, 0, 0, 0.9);
   position: fixed;
   top: 0;
   right: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 10px;
 }
 
 .ms_upgrade a {
@@ -175,24 +268,35 @@ min-height: 100px;
   text-transform: uppercase;
   font-size: 11px;
   font-weight: bold;
-  width: 200px;
   border: 1px solid #fff;
   border-radius: 25px;
   text-align: center;
-  padding: 10px;
+  padding: 10px 20px;
+}
+
+.ms_upgrade a:hover {
+  transform: scale(1.1);
 }
 /* Fine regole upgrade */
 
 /* Regole pages */
 .ms_pages {
-  padding-top: 120px;
+  padding: 120px 20px 0 20px;
   text-align: center;
 }
 
 .ms_list_pages li {
   display: inline-block;
-  padding-right: 20px;
+  padding-right: 30px;
   padding-bottom: 20px;
+}
+
+.ms_list_pages a.active::after {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  width: 30%;
+  border-bottom: 3px solid green;
 }
 
 .ms_list_pages li:last-child {
@@ -206,170 +310,117 @@ min-height: 100px;
 }
 /* Fine regole pages */
 
-/* Regole albums */
-.ms_albums_wrapper {
-  padding: 0 15px;
-}
+/* Regole recently collection */
 
 .ms_title {
-  font-weight: bold;
-  padding: 25px 0;
+  padding-bottom: 20px;
 }
 
-.ms_title p {
-  color: #a3a3a3;
-  font-size: .8em;
-  padding-top: 20px;
+.ms_title h2 {
+  padding-bottom: 5px;
 }
 
-.ms_collection {
+.ms_collection ul {
   display: flex;
   flex-wrap: wrap;
-}
-
-.ms_collection_item {
-  padding-right: 15px;
-  padding-bottom: 15px;
-  flex-basis: 200px;
-}
-
-.ms_collection_item:last-child {
-  margin-right: 0;
-}
-
-.ms_collection_item img {
-  width: 100%;
-}
-
-.ms_item_text {
   text-align: center;
 }
 
-.ms_item_text h3 {
-  font-size: .9em;
+.ms_collection ul li {
+  flex-basis: calc(100% / 6);
+  padding: 0 10px;
 }
 
-.ms_item_text span {
-  font-size: .7em;
+.ms_collection_image img {
+  width: 100%;
 }
 
-.ms_collection_artist .ms_item_image img {
+.ms_collection_image .filter {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+}
+
+.ms_collection_image {
+  position: relative;
+}
+
+.ms_collection_image .filter i {
+  color: #fff;
+  font-size: 4em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ms_collection_image:hover .filter{
+  background-color: rgba(0, 0, 0, 0.5);
+  display: block;
+}
+/* Fine regole recently collection */
+
+/* Regole creato per John Doe */
+
+/* Fine regole creato per John Doe */
+
+/* Regole artisti popolari */
+
+.ms_popolar_collection .ms_collection_image img {
   border-radius: 50%;
 }
-/* Fine regole albums */
+/* Fine regole artisti popolari */
+
+/********* MEDIAQUERYS CONTENT ***********/
+@media screen and (min-width: 1439px) {
+
+}
+
+@media screen and (max-width: 878px) {
+  .ms_collection ul li {
+    flex-basis: calc(100% / 4);
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .ms_list_pages li {
+    padding-right: 20px;
+  }
+
+  .ms_collection ul li {
+    flex-basis: 50%
+  }
+
+  .ms_collection_image img {
+    width: 155px;
+  }
+}
+
+@media screen and (max-width: 552px) {
+  .ms_content {
+    width: calc(100% - 60px);   /* sidebar = 60px */
+  }
+
+  .ms_upgrade {
+    width: calc(100% - 60px);   /* sidebar = 60px */
+  }
+
+  .ms_collection_image img {
+    width: 200px;
+  }
+}
+/********* FINE MEDIAQUERYS CONTENT ***********/
 
 /* FINE REGOLE MAIN */
 
 /* REGOLE FOOTER */
-footer > .ms_wrapper {
+footer {
+  width: 100%;
   height: 100px;
-  width: 100%;
   background-color: #282828;
-  color: #fff;
-  padding: 0 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-footer i {
-  cursor: pointer;
-  padding: 0 10px;
-  font-size: 14px;
-}
-
-footer .ms_player_icons i {
-  font-size: 15px;
-}
-
-footer .ms_player_icons i.fa-play-circle {
-  font-size: 25px;
-}
-
-.ms_album_now,
-.ms_player,
-.ms_player_option {
-
-}
-
-/* .ms_album_now_image,
-.ms_album_now_text,
-.ms_album_now_icons {
-  float: left;
-} */
-
-.ms_album_now {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  flex-basis: 250px;
-  flex-shrink: 0;
-}
-
-.ms_album_now_image {
-  width: 70px;
-}
-
-.ms_album_now_image img {
-  width: 100%;
-  /* vertical-align: middle; */
-}
-
-.ms_album_now_text {
-  padding: 0 35px 0 15px;
-}
-
-.ms_album_now_text p {
-  font-size: .5em;
-}
-
-.ms_album_now_icons {
-  color: gray;
-}
-
-.ms_player {
-  text-align: center;
-  flex-grow: 1;
-  flex-basis: 400px;
-}
-
-.ms_player_icons {
-  padding-bottom: 10px;
-}
-
-.ms_player span {
-  padding: 0 15px;
-  font-size: .7em;
-  color: #fff;
-  font-weight: bold;
-}
-
-.ms_timeline_player hr {
-  display: inline-block;
-  color: #fff;
-  width: 60%;
-  vertical-align: middle;
-  padding: 2px;
-  border-radius: 25px;
-  background-color: gray;
-  border-color: gray;
-
-}
-
-.ms_player_option {
-  flex-basis: 250px;
-  flex-shrink: 0;
-}
-
-.ms_player_option hr {
-  display: inline-block;
-  color: #fff;
-  width: 50%;
-  vertical-align: middle;
-  padding: 2px;
-  border-radius: 25px;
-  background-color: gray;
-  border-color: gray;
 }
 /* FINE REGOLE FOOTER */
